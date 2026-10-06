@@ -1,0 +1,32 @@
+[
+  {
+    "id": "example.port-scan",
+    "kind": "port_scan",
+    "description": "one source hits many distinct destination ports",
+    "params": {
+      "threshold": 10,
+      "time_window": "30s",
+      "require_failed": true
+    }
+  },
+  {
+    "id": "example.failed-connections",
+    "kind": "failed_connection_burst",
+    "description": "repeated failed/refused connections toward one host",
+    "params": {
+      "threshold": 5,
+      "time_window": "1m"
+    }
+  },
+  {
+    "id": "example.periodic-beacon",
+    "kind": "periodic_beacon",
+    "description": "near-periodic outbound reconnections to the same service",
+    "params": {
+      "min_count": 4,
+      "min_interval": "5s",
+      "max_interval": "1h",
+      "jitter_ratio": 0.1
+    }
+  }
+]
